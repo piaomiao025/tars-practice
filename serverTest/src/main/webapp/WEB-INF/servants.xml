@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<servants>
+    <servant name="HelloObj">
+        <home-api>com.man.tars.server.testapp.HelloServant</home-api>
+        <home-class>com.man.tars.server.testapp.HelloServantImpl</home-class>
+    </servant>
+</servants>

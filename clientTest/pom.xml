@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.man.tars.client</groupId>
+  <artifactId>clientTest</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>clientTest Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>qq-cloud-central</groupId>
+      <artifactId>tars-client</artifactId>
+      <version>1.0.1</version>
+      <type>jar</type>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>clientTest</finalName>
+    <plugins>
+      <plugin>
+        <groupId>qq-cloud-central</groupId>
+        <artifactId>tars-maven-plugin</artifactId>
+        <version>1.0.1</version>
+        <configuration>
+          <tars2JavaConfig>
+            <!--tars文件位置 -->
+            <tarsFiles><tarsFile>${basedir}/src/main/resources/hello.tars</tarsFile></tarsFiles>
+            <!--源文件编码 -->
+            <tarsFileCharset>UTF-8</tarsFileCharset>
+            <!--生成代码，PS：客户端调用，这里需要设置为false -->
+            <servant>false</servant>
+            <!-- 生成代码编码 -->
+            <charset>UTF-8</charset>
+            <!-- 生成代码目录 -->
+            <srcPath>${basedir}/src/main/java</srcPath>
+            <!--生成代码包前缀 -->
+            <packagePrefixName>com.man.tars.client.</packagePrefixName>
+          </tars2JavaConfig>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>
